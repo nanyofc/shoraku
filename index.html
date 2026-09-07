@@ -24,7 +24,7 @@ html{
 }
 
 body{
-  background:#f6f1ea;
+  background:#f7f3ed;
   color:#211c18;
 
   font-family:
@@ -62,10 +62,11 @@ button{
 
   padding:0 5vw;
 
-  /* 薄いピンク */
-  background:#f8ecef;
+  /* かなり薄いピンク */
+  background:#fff8fa;
 
-  border-bottom:1px solid rgba(50,30,30,.06);
+  border-bottom:
+    1px solid rgba(60,40,40,.05);
 }
 
 
@@ -186,19 +187,20 @@ button{
 .hero{
   width:100%;
 
-  min-height:calc(100svh - 96px);
+  min-height:
+    calc(100svh - 96px);
 
   display:grid;
 
   grid-template-columns:
     50% 50%;
 
-  background:#f6f1ea;
+  background:#f7f3ed;
 }
 
 
 /* ==================================================
-   HERO LEFT
+   HERO COPY
 ================================================== */
 
 .hero-copy{
@@ -325,13 +327,14 @@ button{
 
 
 /* ==================================================
-   HERO VIDEO
+   VIDEO
 ================================================== */
 
 .hero-video{
   position:relative;
 
-  min-height:calc(100svh - 96px);
+  min-height:
+    calc(100svh - 96px);
 
   overflow:hidden;
 
@@ -443,16 +446,14 @@ button{
 
 @media(max-width:1100px){
 
-  /* --------------------
-     HEADER
-  -------------------- */
+  /* HEADER */
 
   .header{
     height:82px;
 
     padding:0 18px;
 
-    background:#f8ecef;
+    background:#fff8fa;
   }
 
 
@@ -472,9 +473,7 @@ button{
   }
 
 
-  /* --------------------
-     HERO
-  -------------------- */
+  /* HERO */
 
   .hero{
     display:block;
@@ -491,7 +490,8 @@ button{
   .hero-video{
     width:100%;
 
-    height:calc(100svh - 82px);
+    height:
+      calc(100svh - 82px);
 
     min-height:0;
   }
@@ -503,7 +503,7 @@ button{
   }
 
 
-  /* 下部を暗く */
+  /* 動画下部グラデーション */
 
   .hero-video::after{
     content:"";
@@ -530,21 +530,19 @@ button{
   }
 
 
-  /* スマホ文字を表示 */
+  /* スマホコピー */
 
   .mobile-copy{
     display:block;
   }
 
 
-  /* --------------------
-     MOBILE CTA
-  -------------------- */
+  /* 下ボタン */
 
   .mobile-bottom{
     display:block;
 
-    background:#f6f1ea;
+    background:#f7f3ed;
 
     padding:
       22px
@@ -614,8 +612,6 @@ button{
     height:50px;
   }
 
-
-  /* 横画面は2カラム */
 
   .hero{
     display:grid;
@@ -728,7 +724,7 @@ button{
 
   gap:27px;
 
-  background:#f8ecef;
+  background:#fff8fa;
 
   opacity:0;
 
@@ -828,10 +824,7 @@ button{
 
 <header class="header">
 
-  <a
-    href="#"
-    class="logo"
-  >
+  <a href="#" class="logo">
 
     <img
       src="sho.png"
@@ -855,11 +848,9 @@ button{
       店舗情報
     </a>
 
-    <a
-      href="https://www.instagram.com/shoraku.yamagata/"
-      target="_blank"
-      rel="noopener"
-    >
+    <!-- 同じ画面でInstagramへ -->
+
+    <a href="https://www.instagram.com/shoraku.yamagata/">
       Instagram
     </a>
 
@@ -875,8 +866,6 @@ button{
     ネット予約
   </a>
 
-
-  <!-- 3本ハンバーガー -->
 
   <button
     class="menu-btn"
@@ -948,8 +937,6 @@ button{
     <a
       class="instagram-link"
       href="https://www.instagram.com/shoraku.yamagata/"
-      target="_blank"
-      rel="noopener"
     >
       Instagram　@shoraku.yamagata
     </a>
@@ -976,7 +963,6 @@ button{
       >
 
     </video>
-
 
 
     <!-- スマホ縦 COPY -->
@@ -1036,8 +1022,6 @@ button{
   <a
     class="mobile-instagram"
     href="https://www.instagram.com/shoraku.yamagata/"
-    target="_blank"
-    rel="noopener"
   >
     Instagram　@shoraku.yamagata
   </a>
@@ -1096,11 +1080,10 @@ button{
   </a>
 
 
+  <!-- target blankを削除 -->
+
   <a
     href="https://www.instagram.com/shoraku.yamagata/"
-    target="_blank"
-    rel="noopener"
-    onclick="closeMenu()"
   >
     Instagram
   </a>
@@ -1111,7 +1094,6 @@ button{
     href="https://yoyaku.tabelog.com/yoyaku/smartphone/net_booking_form/index?rcd=6013296"
     target="_blank"
     rel="noopener"
-    onclick="closeMenu()"
   >
     ネット予約
   </a>
@@ -1135,7 +1117,6 @@ function openMenu(){
 
   document.body.style.overflow =
     "hidden";
-
 }
 
 
@@ -1148,24 +1129,7 @@ function closeMenu(){
 
   document.body.style.overflow =
     "";
-
 }
-
-
-/* 背景部分を押しても閉じる */
-
-document
-  .getElementById("mobileMenu")
-  .addEventListener(
-    "click",
-    function(event){
-
-      if(event.target === this){
-        closeMenu();
-      }
-
-    }
-  );
 
 </script>
 
