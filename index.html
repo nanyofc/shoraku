@@ -1,656 +1,987 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>炭火焼ホルモン 松楽｜山形駅前</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+  <title>炭火焼ホルモン 松楽｜山形駅前</title>
 
-html{
-  scroll-behavior:smooth;
-}
+  <style>
 
-body{
-  font-family:
-    "Noto Sans JP",
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
-    sans-serif;
+    /* ========================================
+       RESET
+    ======================================== */
 
-  background:#f5f0e8;
-  color:#1d1916;
-  overflow-x:hidden;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-a{
-  color:inherit;
-  text-decoration:none;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-button{
-  font:inherit;
-}
+    body {
+      font-family:
+        "Noto Sans JP",
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
 
+      background: #f5f0e8;
+      color: #1d1916;
 
-/* =========================
-   HEADER
-========================= */
+      overflow-x: hidden;
+    }
 
-.header{
-  position:absolute;
-  top:0;
-  left:0;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  width:100%;
+    button {
+      font: inherit;
+    }
 
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
 
-  padding:24px 30px;
 
-  z-index:100;
-}
+    /* ========================================
+       HEADER
+    ======================================== */
 
-.logo img{
-  display:block;
-  width:96px;
-  height:auto;
-}
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
 
-.pc-nav{
-  display:flex;
-  align-items:center;
-  gap:32px;
+      width: 100%;
 
-  font-size:13px;
-  font-weight:600;
-  letter-spacing:.08em;
-}
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-.pc-nav a{
-  transition:opacity .25s;
-}
+      padding: 24px 30px;
 
-.pc-nav a:hover{
-  opacity:.55;
-}
+      z-index: 100;
+    }
 
-.reserve-header{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
 
-  height:48px;
-  padding:0 24px;
+    .logo {
+      position: relative;
+      z-index: 2;
+    }
 
-  border-radius:999px;
 
-  background:#b74a2d;
-  color:#fff;
+    .logo img {
+      display: block;
 
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.05em;
-}
+      width: 96px;
+      height: auto;
+    }
 
-.menu-btn{
-  display:none;
 
-  width:54px;
-  height:54px;
 
-  border:0;
-  border-radius:50%;
+    /* PC MENU */
 
-  background:rgba(255,255,255,.9);
+    .pc-nav {
+      display: flex;
+      align-items: center;
 
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
+      gap: 32px;
 
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
+      font-size: 13px;
+      font-weight: 600;
 
-  gap:6px;
+      letter-spacing: .08em;
+    }
 
-  cursor:pointer;
-}
 
-.menu-btn span{
-  width:23px;
-  height:2px;
+    .pc-nav a {
+      transition: opacity .25s;
+    }
 
-  background:#181512;
 
-  display:block;
-}
+    .pc-nav a:hover {
+      opacity: .55;
+    }
 
 
-/* =========================
-   PC HERO
-========================= */
 
-.hero-pc{
-  position:relative;
+    /* PC RESERVE */
 
-  min-height:100svh;
+    .reserve-header {
+      display: inline-flex;
 
-  display:grid;
-  grid-template-columns:52% 48%;
+      align-items: center;
+      justify-content: center;
 
-  overflow:hidden;
+      height: 48px;
 
-  background:#f5f0e8;
-}
+      padding: 0 24px;
 
-.hero-pc-copy{
-  position:relative;
+      border-radius: 999px;
 
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+      background: #b74a2d;
+      color: #fff;
 
-  padding:
-    140px
-    6vw
-    80px
-    8vw;
-}
+      font-size: 13px;
+      font-weight: 700;
 
-.hero-en{
-  margin-bottom:28px;
+      letter-spacing: .05em;
+    }
 
-  font-size:11px;
-  letter-spacing:.3em;
 
-  color:#8c604d;
-}
 
-.hero-pc-title{
-  font-family:
-    "Yu Mincho",
-    "Hiragino Mincho ProN",
-    serif;
+    /* ========================================
+       HAMBURGER
+    ======================================== */
 
-  font-weight:500;
-  font-size:clamp(48px,5vw,78px);
+    .menu-btn {
+      display: none;
 
-  line-height:1.45;
-  letter-spacing:.05em;
+      width: 58px;
+      height: 58px;
 
-  margin-bottom:30px;
-}
+      border: 0;
+      border-radius: 50%;
 
-.hero-pc-description{
-  font-family:
-    "Yu Mincho",
-    "Hiragino Mincho ProN",
-    serif;
+      background: rgba(255,255,255,.92);
 
-  font-size:16px;
-  line-height:2;
+      box-shadow:
+        0 5px 20px rgba(0,0,0,.05);
 
-  color:#665a52;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
 
-  margin-bottom:38px;
-}
+      align-items: center;
+      justify-content: center;
 
-.hero-buttons{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
+      flex-direction: column;
 
-.btn{
-  height:54px;
-  min-width:170px;
+      gap: 7px;
 
-  padding:0 24px;
+      cursor: pointer;
 
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
+      position: relative;
+      z-index: 2;
+    }
 
-  border-radius:999px;
 
-  font-size:14px;
-  font-weight:700;
+    .menu-btn span {
+      display: block;
 
-  transition:
-    transform .2s,
-    opacity .2s;
-}
+      width: 24px;
+      height: 2px;
 
-.btn:hover{
-  transform:translateY(-2px);
-}
+      background: #1b1815;
+    }
 
-.btn-main{
-  background:#b74a2d;
-  color:#fff;
-}
 
-.btn-outline{
-  border:1px solid rgba(0,0,0,.18);
-  background:rgba(255,255,255,.45);
-}
 
-.pc-instagram{
-  display:inline-block;
+    /* ========================================
+       PC HERO
+    ======================================== */
 
-  margin-top:30px;
+    .hero-pc {
+      position: relative;
 
-  font-size:12px;
+      min-height: 100svh;
 
-  color:#756960;
+      display: grid;
+      grid-template-columns: 52% 48%;
 
-  letter-spacing:.08em;
-}
+      overflow: hidden;
 
-.hero-pc-video{
-  position:relative;
+      background: #f5f0e8;
+    }
 
-  height:100svh;
 
-  overflow:hidden;
 
-  background:#111;
-}
+    /* PC LEFT */
 
-.hero-pc-video video{
-  width:100%;
-  height:100%;
+    .hero-pc-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
-  display:block;
+      padding:
+        140px
+        6vw
+        80px
+        8vw;
+    }
 
-  object-fit:cover;
-  object-position:center;
-}
 
-.hero-pc-video::after{
-  content:"";
+    .hero-en {
+      margin-bottom: 26px;
 
-  position:absolute;
-  inset:0;
+      font-size: 11px;
 
-  background:
-    linear-gradient(
-      to right,
-      rgba(25,20,15,.13),
-      transparent 35%
-    );
+      letter-spacing: .28em;
 
-  pointer-events:none;
-}
+      color: #8b604e;
+    }
 
 
-/* =========================
-   MOBILE HERO
-========================= */
+    .hero-pc-title {
+      font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
 
-.hero-mobile{
-  display:none;
-}
+      font-size: clamp(46px, 5vw, 76px);
 
+      font-weight: 500;
 
-/* =========================
-   MOBILE
-========================= */
+      line-height: 1.45;
 
-@media (max-width:767px){
+      letter-spacing: .04em;
 
-  body{
-    background:#f5f0e8;
-  }
+      margin-bottom: 25px;
+    }
 
-  .header{
-    padding:18px 18px;
-    align-items:flex-start;
-  }
 
-  .logo img{
-    width:92px;
-  }
+    .hero-pc-description {
+      font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
 
-  .pc-nav,
-  .reserve-header{
-    display:none;
-  }
+      font-size: 16px;
 
-  .menu-btn{
-    display:flex;
+      line-height: 2;
 
-    width:58px;
-    height:58px;
-  }
+      color: #675b53;
 
-  .hero-pc{
-    display:none;
-  }
+      margin-bottom: 36px;
+    }
 
-  .hero-mobile{
-    display:block;
 
-    position:relative;
 
-    width:100%;
+    /* PC BUTTON */
 
-    background:#f5f0e8;
-  }
+    .hero-buttons {
+      display: flex;
 
-  .hero-video-mobile{
-    position:relative;
+      gap: 12px;
 
-    width:100%;
-    height:100svh;
+      flex-wrap: wrap;
+    }
 
-    overflow:hidden;
 
-    background:#111;
-  }
+    .btn {
+      display: inline-flex;
 
-  .hero-video-mobile video{
-    width:100%;
-    height:100%;
+      align-items: center;
+      justify-content: center;
 
-    object-fit:cover;
+      min-width: 170px;
+      height: 54px;
 
-    display:block;
-  }
+      padding: 0 24px;
 
-  .hero-video-mobile::after{
-    content:"";
+      border-radius: 999px;
 
-    position:absolute;
-    inset:0;
+      font-size: 14px;
+      font-weight: 700;
 
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(0,0,0,.10) 0%,
-        rgba(0,0,0,0) 30%,
-        rgba(0,0,0,0) 55%,
-        rgba(0,0,0,.62) 100%
-      );
+      transition:
+        transform .2s,
+        opacity .2s;
+    }
 
-    pointer-events:none;
-  }
 
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
-  /* =========================
-     MOBILE COPY
-  ========================= */
 
-  .mobile-copy{
-    position:absolute;
+    .btn-main {
+      background: #b74a2d;
+      color: #fff;
+    }
 
-    left:24px;
-    right:24px;
-    bottom:50px;
 
-    z-index:3;
+    .btn-outline {
+      border: 1px solid rgba(0,0,0,.16);
 
-    color:#fff;
+      background: rgba(255,255,255,.5);
+    }
 
-    text-align:left;
-  }
 
-  .mobile-en{
-    margin-bottom:10px;
+    .pc-instagram {
+      display: inline-block;
 
-    font-size:9px;
-    letter-spacing:.22em;
+      margin-top: 28px;
 
-    line-height:1.5;
+      font-size: 12px;
 
-    opacity:.9;
-  }
+      letter-spacing: .08em;
 
-  .mobile-title{
-    font-family:
-      "Yu Mincho",
-      "Hiragino Mincho ProN",
-      serif;
+      color: #74685f;
+    }
 
-    font-size:30px;
-    font-weight:500;
 
-    line-height:1.45;
-    letter-spacing:.03em;
 
-    margin-bottom:12px;
+    /* PC VIDEO */
 
-    text-shadow:
-      0 2px 12px rgba(0,0,0,.45);
-  }
+    .hero-pc-video {
+      position: relative;
 
-  .mobile-description{
-    font-family:
-      "Yu Mincho",
-      "Hiragino Mincho ProN",
-      serif;
+      height: 100svh;
 
-    font-size:13px;
+      overflow: hidden;
 
-    line-height:1.7;
-    letter-spacing:.03em;
+      background: #111;
+    }
 
-    opacity:.95;
 
-    text-shadow:
-      0 2px 8px rgba(0,0,0,.4);
-  }
+    .hero-pc-video video {
+      width: 100%;
+      height: 100%;
 
+      display: block;
 
-  /* =========================
-     MOBILE CTA
-  ========================= */
+      object-fit: cover;
+      object-position: center;
+    }
 
-  .mobile-actions{
-    padding:24px 18px 12px;
 
-    display:grid;
-    grid-template-columns:1fr 1fr;
+    .hero-pc-video::after {
+      content: "";
 
-    gap:10px;
-  }
+      position: absolute;
 
-  .mobile-actions .btn{
-    min-width:0;
-    height:54px;
+      inset: 0;
 
-    padding:0 10px;
+      background:
+        linear-gradient(
+          to right,
+          rgba(25,20,15,.12),
+          transparent 35%
+        );
 
-    font-size:13px;
-  }
+      pointer-events: none;
+    }
 
-  .instagram-mobile{
-    display:flex;
 
-    align-items:center;
-    justify-content:center;
 
-    padding:12px 20px 30px;
+    /* ========================================
+       MOBILE HERO
+    ======================================== */
 
-    font-size:11px;
-    letter-spacing:.08em;
+    .hero-mobile {
+      display: none;
+    }
 
-    color:#71675f;
-  }
-}
 
 
-/* =========================
-   MOBILE MENU
-========================= */
+    /* ========================================
+       MOBILE
+    ======================================== */
 
-.mobile-menu{
-  position:fixed;
-  inset:0;
+    @media (max-width: 767px) {
 
-  z-index:9999;
 
-  background:#f5f0e8;
+      /* ----------------------------------------
+         HEADER
+      ---------------------------------------- */
 
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+      .header {
+        padding:
+          18px
+          18px
+          52px;
 
-  gap:26px;
+        align-items: flex-start;
 
-  opacity:0;
-  visibility:hidden;
 
-  transition:
-    opacity .3s,
-    visibility .3s;
-}
+        /*
+          ロゴ周辺の薄い白帯
+          下に向かって動画へ自然に消える
+        */
 
-.mobile-menu.open{
-  opacity:1;
-  visibility:visible;
-}
+        background:
+          linear-gradient(
+            to bottom,
 
-.mobile-menu-logo{
-  width:120px;
-  margin-bottom:10px;
-}
+            rgba(255,255,255,.78) 0%,
 
-.mobile-menu a:not(.menu-reserve){
-  font-family:
-    "Yu Mincho",
-    "Hiragino Mincho ProN",
-    serif;
+            rgba(255,255,255,.55) 35%,
 
-  font-size:19px;
-  letter-spacing:.06em;
-}
+            rgba(255,255,255,.22) 70%,
 
-.menu-close{
-  position:absolute;
+            rgba(255,255,255,0) 100%
+          );
+      }
 
-  top:20px;
-  right:20px;
 
-  width:56px;
-  height:56px;
+      .logo img {
+        width: 92px;
+      }
 
-  border:0;
 
-  background:#fff;
+      .pc-nav,
+      .reserve-header {
+        display: none;
+      }
 
-  border-radius:50%;
 
-  font-size:29px;
+      .menu-btn {
+        display: flex;
+      }
 
-  cursor:pointer;
-}
 
-.menu-reserve{
-  margin-top:12px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+      /* ----------------------------------------
+         PC HIDE
+      ---------------------------------------- */
 
-  width:210px;
-  height:54px;
+      .hero-pc {
+        display: none;
+      }
 
-  border-radius:999px;
 
-  background:#b74a2d;
-  color:#fff;
 
-  font-size:14px;
-  font-weight:700;
-}
-</style>
+      /* ----------------------------------------
+         MOBILE HERO
+      ---------------------------------------- */
+
+      .hero-mobile {
+        display: block;
+
+        position: relative;
+
+        width: 100%;
+
+        background: #f5f0e8;
+      }
+
+
+      .hero-video-mobile {
+        position: relative;
+
+        width: 100%;
+        height: 100svh;
+
+        overflow: hidden;
+
+        background: #111;
+      }
+
+
+      .hero-video-mobile video {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center;
+      }
+
+
+
+      /*
+        コピーを読みやすくするため
+        動画下部だけ暗く
+      */
+
+      .hero-video-mobile::after {
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background:
+          linear-gradient(
+            to bottom,
+
+            rgba(0,0,0,.03) 0%,
+
+            rgba(0,0,0,0) 42%,
+
+            rgba(0,0,0,.08) 60%,
+
+            rgba(0,0,0,.64) 100%
+          );
+
+        pointer-events: none;
+      }
+
+
+
+      /* ========================================
+         MOBILE COPY
+      ======================================== */
+
+      .mobile-copy {
+        position: absolute;
+
+        left: 24px;
+        right: 20px;
+
+        bottom: 52px;
+
+        z-index: 3;
+
+        color: #fff;
+
+        text-align: left;
+      }
+
+
+
+      /* 英字 */
+
+      .mobile-en {
+        margin-bottom: 12px;
+
+        font-size: 9px;
+
+        line-height: 1.5;
+
+        letter-spacing: .24em;
+
+        opacity: .92;
+      }
+
+
+
+      /* キャッチ */
+
+      .mobile-title {
+        font-family:
+          "Yu Mincho",
+          "Hiragino Mincho ProN",
+          serif;
+
+        font-size: clamp(27px, 7.4vw, 32px);
+
+        font-weight: 500;
+
+        line-height: 1.45;
+
+        letter-spacing: .025em;
+
+        margin-bottom: 14px;
+
+        text-shadow:
+          0 2px 14px rgba(0,0,0,.45);
+      }
+
+
+
+      /* サブコピー */
+
+      .mobile-description {
+        font-family:
+          "Yu Mincho",
+          "Hiragino Mincho ProN",
+          serif;
+
+        font-size: 13px;
+
+        line-height: 1.75;
+
+        letter-spacing: .025em;
+
+        opacity: .96;
+
+        text-shadow:
+          0 2px 9px rgba(0,0,0,.45);
+      }
+
+
+
+      /* ========================================
+         MOBILE CTA
+      ======================================== */
+
+      .mobile-actions {
+        padding:
+          24px
+          18px
+          12px;
+
+        display: grid;
+
+        grid-template-columns:
+          1fr
+          1fr;
+
+        gap: 10px;
+      }
+
+
+      .mobile-actions .btn {
+        min-width: 0;
+
+        height: 54px;
+
+        padding: 0 10px;
+
+        font-size: 13px;
+      }
+
+
+      .instagram-mobile {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        padding:
+          12px
+          20px
+          30px;
+
+        font-size: 11px;
+
+        letter-spacing: .08em;
+
+        color: #71675f;
+      }
+
+    }
+
+
+
+    /* ========================================
+       MOBILE MENU
+    ======================================== */
+
+    .mobile-menu {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 9999;
+
+      background: #f5f0e8;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 26px;
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition:
+        opacity .3s,
+        visibility .3s;
+    }
+
+
+    .mobile-menu.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+
+    .mobile-menu-logo {
+      width: 120px;
+
+      margin-bottom: 12px;
+    }
+
+
+    .mobile-menu a:not(.menu-reserve) {
+      font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+
+      font-size: 19px;
+
+      letter-spacing: .06em;
+    }
+
+
+    .menu-close {
+      position: absolute;
+
+      top: 20px;
+      right: 20px;
+
+      width: 56px;
+      height: 56px;
+
+      border: 0;
+
+      border-radius: 50%;
+
+      background: #fff;
+
+      font-size: 29px;
+
+      cursor: pointer;
+    }
+
+
+    .menu-reserve {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 210px;
+      height: 54px;
+
+      margin-top: 12px;
+
+      border-radius: 999px;
+
+      background: #b74a2d;
+
+      color: #fff;
+
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+  </style>
 </head>
+
 
 
 <body>
 
 
-<header class="header">
+  <!-- ========================================
+       HEADER
+  ======================================== -->
 
-  <a href="#" class="logo">
-    <img src="sho.png" alt="炭火焼ホルモン 松楽">
-  </a>
+  <header class="header">
+
+    <a href="#" class="logo">
+
+      <img
+        src="sho.png"
+        alt="炭火焼ホルモン 松楽"
+      >
+
+    </a>
 
 
-  <nav class="pc-nav">
 
-    <a href="#about">松楽について</a>
+    <nav class="pc-nav">
 
-    <a href="#menu">お品書き</a>
+      <a href="#about">
+        松楽について
+      </a>
 
-    <a href="#access">店舗情報</a>
+      <a href="#menu">
+        お品書き
+      </a>
+
+      <a href="#access">
+        店舗情報
+      </a>
+
+      <a
+        href="https://www.instagram.com/shoraku.yamagata/"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram
+      </a>
+
+    </nav>
+
+
 
     <a
-      href="https://www.instagram.com/shoraku.yamagata/"
+      class="reserve-header"
+      href="https://yoyaku.tabelog.com/yoyaku/smartphone/net_booking_form/index?rcd=6013296"
       target="_blank"
       rel="noopener"
     >
-      Instagram
+      ネット予約
     </a>
 
-  </nav>
 
 
-  <a
-    class="reserve-header"
-    href="https://yoyaku.tabelog.com/yoyaku/smartphone/net_booking_form/index?rcd=6013296"
-    target="_blank"
-    rel="noopener"
-  >
-    ネット予約
-  </a>
+    <button
+      class="menu-btn"
+      id="menuOpen"
+      aria-label="メニューを開く"
+    >
 
+      <span></span>
+      <span></span>
 
-  <button
-    class="menu-btn"
-    id="menuOpen"
-    aria-label="メニューを開く"
-  >
-    <span></span>
-    <span></span>
-  </button>
+    </button>
 
-</header>
+  </header>
 
 
 
-<section class="hero-pc">
+  <!-- ========================================
+       PC HERO
+  ======================================== -->
 
-  <div class="hero-pc-copy">
-
-    <p class="hero-en">
-      SUMIBIYAKI HORUMON SHORAKU
-    </p>
+  <section class="hero-pc">
 
 
-    <h1 class="hero-pc-title">
-      創業40年の味を、<br>
-      七輪で。
-    </h1>
+    <div class="hero-pc-copy">
 
 
-    <p class="hero-pc-description">
-      自家製ダレと炭火で味わう、<br>
-      松楽のホルモン。
-    </p>
+      <p class="hero-en">
+        SUMIBIYAKI HORUMON SHORAKU
+      </p>
 
 
-    <div class="hero-buttons">
+
+      <h1 class="hero-pc-title">
+        創業40年の味を、<br>
+        七輪で。
+      </h1>
+
+
+
+      <p class="hero-pc-description">
+        自家製ダレと炭火で味わう、<br>
+        松楽のホルモン。
+      </p>
+
+
+
+      <div class="hero-buttons">
+
+
+        <a
+          class="btn btn-main"
+          href="https://yoyaku.tabelog.com/yoyaku/smartphone/net_booking_form/index?rcd=6013296"
+          target="_blank"
+          rel="noopener"
+        >
+          ネット予約
+        </a>
+
+
+
+        <a
+          class="btn btn-outline"
+          href="tel:05017257888"
+        >
+          電話する
+        </a>
+
+
+      </div>
+
+
+
+      <a
+        class="pc-instagram"
+        href="https://www.instagram.com/shoraku.yamagata/"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram　@shoraku.yamagata
+      </a>
+
+
+    </div>
+
+
+
+    <div class="hero-pc-video">
+
+
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      >
+
+        <source
+          src="sho.mp4"
+          type="video/mp4"
+        >
+
+      </video>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ========================================
+       MOBILE HERO
+  ======================================== -->
+
+  <section class="hero-mobile">
+
+
+    <div class="hero-video-mobile">
+
+
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      >
+
+        <source
+          src="sho.mp4"
+          type="video/mp4"
+        >
+
+      </video>
+
+
+
+      <!-- MOBILE COPY -->
+
+      <div class="mobile-copy">
+
+
+        <p class="mobile-en">
+          SUMIBIYAKI HORUMON SHORAKU
+        </p>
+
+
+
+        <h1 class="mobile-title">
+          創業40年の味を、七輪で。
+        </h1>
+
+
+
+        <p class="mobile-description">
+          自家製ダレと炭火で味わう、松楽のホルモン。
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- RESERVE BUTTON -->
+
+    <div class="mobile-actions">
+
 
       <a
         class="btn btn-main"
@@ -662,6 +993,7 @@ button{
       </a>
 
 
+
       <a
         class="btn btn-outline"
         href="tel:05017257888"
@@ -669,11 +1001,13 @@ button{
         電話する
       </a>
 
+
     </div>
 
 
+
     <a
-      class="pc-instagram"
+      class="instagram-mobile"
       href="https://www.instagram.com/shoraku.yamagata/"
       target="_blank"
       rel="noopener"
@@ -681,66 +1015,69 @@ button{
       Instagram　@shoraku.yamagata
     </a>
 
-  </div>
+
+  </section>
 
 
-  <div class="hero-pc-video">
 
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
+  <!-- ========================================
+       MOBILE MENU
+  ======================================== -->
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="メニューを閉じる"
     >
-      <source src="sho.mp4" type="video/mp4">
-    </video>
-
-  </div>
-
-</section>
+      ×
+    </button>
 
 
 
-<section class="hero-mobile">
-
-  <div class="hero-video-mobile">
-
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
+    <img
+      class="mobile-menu-logo"
+      src="sho.png"
+      alt="松楽"
     >
-      <source src="sho.mp4" type="video/mp4">
-    </video>
 
 
-    <div class="mobile-copy">
 
-      <p class="mobile-en">
-        SUMIBIYAKI HORUMON SHORAKU
-      </p>
-
-      <h1 class="mobile-title">
-        創業40年の味を、<br>
-        七輪で。
-      </h1>
-
-      <p class="mobile-description">
-        自家製ダレと炭火で味わう、松楽のホルモン。
-      </p>
-
-    </div>
-
-  </div>
+    <a href="#about">
+      松楽について
+    </a>
 
 
-  <div class="mobile-actions">
+
+    <a href="#menu">
+      お品書き
+    </a>
+
+
+
+    <a href="#access">
+      店舗情報
+    </a>
+
+
 
     <a
-      class="btn btn-main"
+      href="https://www.instagram.com/shoraku.yamagata/"
+      target="_blank"
+      rel="noopener"
+    >
+      Instagram
+    </a>
+
+
+
+    <a
+      class="menu-reserve"
       href="https://yoyaku.tabelog.com/yoyaku/smartphone/net_booking_form/index?rcd=6013296"
       target="_blank"
       rel="noopener"
@@ -749,142 +1086,71 @@ button{
     </a>
 
 
-    <a
-      class="btn btn-outline"
-      href="tel:05017257888"
-    >
-      電話する
-    </a>
-
   </div>
 
 
-  <a
-    class="instagram-mobile"
-    href="https://www.instagram.com/shoraku.yamagata/"
-    target="_blank"
-    rel="noopener"
-  >
-    Instagram　@shoraku.yamagata
-  </a>
 
-</section>
+  <!-- ========================================
+       JAVASCRIPT
+  ======================================== -->
 
+  <script>
 
+    const menuOpen =
+      document.getElementById("menuOpen");
 
-<div
-  class="mobile-menu"
-  id="mobileMenu"
->
+    const menuClose =
+      document.getElementById("menuClose");
 
-  <button
-    class="menu-close"
-    id="menuClose"
-    aria-label="メニューを閉じる"
-  >
-    ×
-  </button>
-
-
-  <img
-    class="mobile-menu-logo"
-    src="sho.png"
-    alt="松楽"
-  >
-
-
-  <a href="#about">
-    松楽について
-  </a>
-
-
-  <a href="#menu">
-    お品書き
-  </a>
-
-
-  <a href="#access">
-    店舗情報
-  </a>
-
-
-  <a
-    href="https://www.instagram.com/shoraku.yamagata/"
-    target="_blank"
-    rel="noopener"
-  >
-    Instagram
-  </a>
-
-
-  <a
-    class="menu-reserve"
-    href="https://yoyaku.tabelog.com/yoyaku/smartphone/net_booking_form/index?rcd=6013296"
-    target="_blank"
-    rel="noopener"
-  >
-    ネット予約
-  </a>
-
-</div>
+    const mobileMenu =
+      document.getElementById("mobileMenu");
 
 
 
-<script>
-const menuOpen =
-  document.getElementById("menuOpen");
-
-const menuClose =
-  document.getElementById("menuClose");
-
-const mobileMenu =
-  document.getElementById("mobileMenu");
-
-
-menuOpen.addEventListener(
-  "click",
-  function(){
-
-    mobileMenu.classList.add("open");
-
-    document.body.style.overflow =
-      "hidden";
-
-  }
-);
-
-
-menuClose.addEventListener(
-  "click",
-  function(){
-
-    mobileMenu.classList.remove("open");
-
-    document.body.style.overflow =
-      "";
-
-  }
-);
-
-
-mobileMenu
-  .querySelectorAll("a")
-  .forEach(function(link){
-
-    link.addEventListener(
+    menuOpen.addEventListener(
       "click",
-      function(){
+      function() {
 
-        mobileMenu.classList.remove("open");
+        mobileMenu.classList.add("open");
 
-        document.body.style.overflow =
-          "";
+        document.body.style.overflow = "hidden";
 
       }
     );
 
-  });
-</script>
+
+
+    menuClose.addEventListener(
+      "click",
+      function() {
+
+        mobileMenu.classList.remove("open");
+
+        document.body.style.overflow = "";
+
+      }
+    );
+
+
+
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach(function(link) {
+
+        link.addEventListener(
+          "click",
+          function() {
+
+            mobileMenu.classList.remove("open");
+
+            document.body.style.overflow = "";
+
+          }
+        );
+
+      });
+
+  </script>
 
 
 </body>
